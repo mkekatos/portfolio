@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+html, body {
+    height: 100%; /* Make sure the body takes up the full height of the screen */
+    margin: 0; /* Remove default margin */
+}
+
+body {
+    font-family: "Source Code Pro", Roboto, fantasy, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+main{
+    flex: 1
+}
+
+footer{
+    margin: 0;
+    padding: 1rem 2rem;
+    color: #E0E0E0;
+}
+
+/* Header styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #333;
+    position: relative; /* Allows overlapping with positioned children */
+    /* border-bottom: 1px solid #ccc; */
+}
+
+.interactive-header {
+    cursor: pointer; /* Changes cursor to pointer */
+}
+
+.logo-text {
+    margin: 0;
+    color: #E0E0E0;
+    font-size: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    /* letter-spacing: 0.15rem; */
+}
+
+.logo-text:hover{
+    color: white;
+}
+
+
+.gear {
+    display: inline-flex; /* Keeps it aligned within flexbox layout */
+    vertical-align: middle; /* Aligns with text */
+    transition: transform 0.6s ease;
+    margin-left: 0.1rem; /* Add space between the gear and preceding letter */
+    margin-right: 0.1rem; /* Add space between the gear and following letter */
+    position: relative;
+    width: 19px; /* Slightly smaller size to avoid overlapping */
+    height: 19px;
+}
+
+.gear img {
+    display: block; /* Removes default inline spacing for images */
+    width: 100%; /* Matches the container size */
+    height: 100%;
+}
+
+
+.interactive-header:hover .gear {
+    transform: rotate(360deg); /* Rotates the gear on hover */
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #E0E0E0;
+    font-weight: bold;
+    letter-spacing: 0.12rem;
+}
+
+.nav-list li a:hover {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    header {
+        display: flex;
+        flex-direction: column; /* Stack elements in a column */
+        justify-content: center; /* Center vertically */
+        align-items: center; /* Center horizontally */
+        gap: 1rem; /* Add space between elements */
+        padding: 1rem;
+    
+    }
+
+    .interactive-header {
+        display: flex; /* Ensure it behaves as a flex container */
+        justify-content: center; /* Center the text inside */
+        align-items: center; /* Center the text inside */
+        /* width: 100%; Ensure full width so that the next element doesn't overlap */
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: row; /* Stack navigation items vertically */
+        gap: 2rem; /* Add spacing between nav items */
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
+        text-align: center; /* Center align text */
+    }
+
+    .nav-list li {
+        text-align: center;
+    }
+
+    footer {
+        font-size: 0.75rem;
+    }
+}
+
+.git-tag{
+    color: white;
+    text-decoration: none;
+}
+
+.git-tag:hover{
+    color: #ff612b;
+}
