@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A brief description of the page for search engines and social media.">
     <meta name="author" content="Your Name">
-    <title>Page Title</title>
+    <title>Kekatos - Contact</title>
     <link rel="stylesheet" href="styles.css"> 
     <link rel="icon" href="favicon.ico"> <!-- Optional: Favicon -->
 </head>
@@ -17,30 +17,42 @@
         <nav>
             <ul class="nav-list">
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="career.html">Career</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <section>
-            <h2>Ready to build something amazing?</h2>
-            <form action="/submit_form" method="POST">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
+    <main class="contact-wrapper">
+        <section class="contact-section">
+            <div class="content-container">
+                <div class="left-text">
+                    <h2> Let’s talk.</h2>
+                    <p>Big ideas, bigger results. <img src="svgs/rocket-svgrepo-com.svg" alt="Rocket" class="rocket-icon"></p>
+                </div>
+                <div class="form-container">
+                    <div class="form-wrapper">
+                        <h2 class="form-header">Get in touch and share your vision.</h2>
+                        <form action="https://fabform.io/f/PUuaBn0" method="POST">
+                            
+                            <input type="text" class="form-input" id="name" name="name"  placeholder="Full Name" required>
+                            
+                            <input type="email" class="form-email" id="email" name="email" placeholder="Email Address" required>
 
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-
-                <button type="submit">Send Message</button>
-            </form>
+                            <input type="text" class="form-subject" id="subject" name="subject" placeholder="Subject" required>
+        
+                            <textarea id="message" class="form-message" name="message" rows="6" placeholder="Share some ideas or connect!" required></textarea>
+        
+                            <button type="submit" class="form-submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Matthew Kekatos • <a class="git-tag" href="https://github.com/mkekatos" rel="noopener noreferrer" target="_blank">Github</a></p>
+        <p>
+            &copy; 2024 Matthew Kekatos
+        </p>
     </footer>
 
     <script src="script.js"></script> <!-- Link to your JavaScript file -->

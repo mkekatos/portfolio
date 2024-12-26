@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&family=Roboto&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
 
 html, body {
     height: 100%; /* Make sure the body takes up the full height of the screen */
@@ -24,6 +26,7 @@ footer{
     margin: 0;
     padding: 1rem 2rem;
     color: #E0E0E0;
+    font-size: .75rem;
 }
 
 /* Header styling */
@@ -66,12 +69,6 @@ footer{
     height: 19px;
 }
 
-.gear img {
-    display: block; /* Removes default inline spacing for images */
-    width: 100%; /* Matches the container size */
-    height: 100%;
-}
-
 
 .interactive-header:hover .gear {
     transform: rotate(360deg); /* Rotates the gear on hover */
@@ -90,10 +87,29 @@ footer{
     color: #E0E0E0;
     font-weight: bold;
     letter-spacing: 0.12rem;
+    position: relative; /* Positioning for the pseudo-element */
+    display: inline-block; /* Ensure it's treated like a block element */
+    transition: color 0.3s ease; /* Transition only for color */
+}
+
+.nav-list li a::after {
+    content: ''; /* Empty content for pseudo-element */
+    position: absolute;
+    left: 50%; /* Start at the middle */
+    bottom: 0; /* Align at the bottom of the anchor tag */
+    width: 0; /* Initially no width */
+    height: 1px; /* Border height */
+    background-color: #ff5c00; /* Border color */
+    transition: width 0.3s ease, left 0.3s ease; /* Smooth transition for width and left position */
 }
 
 .nav-list li a:hover {
-    color: white;
+    color: #ff5c00; /* Change text color on hover */
+}
+
+.nav-list li a:hover::after {
+    width: 100%; /* Expand the width on hover */
+    left: 0; /* Move to the left edge */
 }
 
 @media (max-width: 768px) {
@@ -139,4 +155,414 @@ footer{
 
 .git-tag:hover{
     color: #ff612b;
+}
+/* ------------------------------ Index  ------------------------------*/
+.intro-main {
+    display: flex;
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center the section */
+    height: 100vh; /* Ensure the section spans the full viewport height */
+    gap: 2rem; /* Space between text and image */
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align text to the left */
+    justify-content: center; /* Vertically center the text inside the container */
+    text-align: left; /* Left-align the text inside */
+    color: #ff5c00;
+    width: 30%;
+}
+
+.intro-title {
+    margin: 0; /* Remove default margin for consistent spacing */
+    font-size: 2rem; /* Adjust as needed */
+    line-height: 1.2; /* Adjust spacing between lines */
+    color: white;
+    font-size: 2rem;
+    font-family: 'Poppins';
+    font-weight: 700;
+    text-shadow: 4px 4px 0px black;
+}
+
+.typewriter {
+    font-family: 'Poppins', Courier, monospace;
+    letter-spacing: 2px;
+    font-size: 1.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: left; /* Ensure typewriter text starts on the left */
+    border-right: 4px solid white; /* Blinking cursor */
+    animation: blink 0.7s step-end infinite;
+    height: 2.4rem; /* Prevent jumping during typing */
+    text-shadow: 4px 4px 0px black;
+}
+
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: white; }
+}
+
+.headshot-container {
+    background-color: #3a3f47;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add a shadow to the container */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.headshot-container:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Deepen shadow on hover */
+}
+
+.headshot {
+    width: 250px; /* Adjust the size of the image */
+    height: 350px; /* Make it a square */
+    border-radius: 1rem;
+    border: 2px solid white; /* White border for contrast */
+     /* Smooth hover effect */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Center the icons */
+    gap: 1rem; /* Add space between the icons */
+    margin-top: 1rem; /* Add space above the icons */
+}
+
+.icon {
+    width: 40px; /* Adjust size of icons */
+    height: 40px;
+    /* border-radius: 50%; Make them circular */
+    object-fit: cover;
+    transition: transform 0.2s ease; /* Add hover effect */
+    /* background-color: white; */
+}
+
+.icon:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    filter: brightness(1.2); /* Brighten on hover */
+}
+
+@media (max-width: 768px) {
+    .intro-main {
+        flex-direction: column; /* Stack containers vertically */
+        gap: 2rem; /* Reduce space between containers */
+        height: auto; /* Let the content determine height */
+        padding: 2rem; /* Add padding around the content */
+        justify-content: center;
+    }
+
+    .text-container {
+        width: 90%; /* Use most of the screen width */
+        max-width: 500px; /* Optional: Cap the max width */
+        display: flex;
+        align-items: center;
+    }
+    
+    /* .headshot-container{
+
+    } */
+
+    .intro-title {
+        font-size: 2rem; /* Reduce font size for smaller screens */
+    }
+
+    .typewriter {
+        font-size: 1.8rem; /* Reduce typewriter font size */
+    }
+
+    .headshot {
+        width: 200px; /* Adjust image size for smaller screens */
+        height: 280px;
+    }
+}
+/* ------------------------------ Contact  ------------------------------*/
+
+.contact-wrapper{
+    display: flex;
+    justify-content: center;
+
+}
+
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100vh; Full-screen height */
+    padding: 2rem;
+    /* background-color: #f9f9f9; Optional: Background color */
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    gap: 2rem; /* Space between text and form */
+}
+
+/* Left Text Section */
+.left-text {
+    flex: 1; /* Take available space */
+    max-width: 40%; /* Limit width */
+    text-align: left;
+    line-height: 1.5; /* Improve readability */
+}
+
+.left-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+    font-weight: 700; /* Bold for impact */
+    letter-spacing: 0.05rem; /* Add subtle spacing for a modern look */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add depth with a shadow */
+}
+
+.left-text p {
+    font-size: 1.55rem; /* Smaller for contrast with the heading */
+    color: #dcdcdc; /* Softer gray for less contrast */
+    font-weight: 300; /* Light weight for elegance */
+    letter-spacing: 0.03rem; /* Slight spacing */
+    margin-top: 0.5rem; /* Add a bit of space above */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Subtle shadow for paragraph */
+}
+
+.rocket-icon {
+    width: 55px; /* Set the desired width */
+    height: auto; /* Keep aspect ratio */
+    vertical-align: middle; /* Align it vertically with the text */
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px); /* Move the rocket up */
+    }
+    100% {
+        transform: translateY(0); /* Return to original position */
+    }
+}
+
+/* Form Section */
+.form-container {
+    flex: 1; /* Take available space */
+    max-width: 50%; /* Limit width */
+}
+
+.form-header{
+    color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Subtle shadow for paragraph */
+    margin: 0;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    /* gap: 1rem; */
+    background-color:  #3a3f47;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+   
+}
+
+.form-wrapper h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.form-wrapper input,
+.form-wrapper textarea,
+.form-wrapper button {
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.form-wrapper input:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.form-wrapper input:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.form-wrapper input:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.form-wrapper textarea {
+    animation-delay: 0.8s;
+}
+
+.form-wrapper button {
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.form-input, .form-email, .form-message, .form-submit, .form-subject{
+    width: 100%; /* Make all form elements take full width */
+    padding: 0.75rem; /* Add some padding */
+    margin: 0; /* Remove default margins */
+    margin-bottom: 1rem;
+    border: 1px solid #ccc; /* Border for form elements */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+    background-color: #FFFFFF1A;
+    color: white;
+
+}
+
+/* Apply Autofill when not in focus */
+
+.form-input:focus,
+.form-email:focus,
+.form-subject:focus,
+.form-message:focus {
+    outline: none;
+    border: 1px solid #ff612b; /* Custom border color */
+    /* box-shadow: 0 0 5px #ff612b; Optional glow effect */
+    transition: border-color 0.6s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+input::placeholder {
+    color: #999; /* Replace with your desired color */
+    opacity: 1; /* Ensure the placeholder is fully opaque */
+}
+
+textarea::placeholder {
+    color: #999; /* Replace with your desired color */
+    opacity: 1; /* Ensure the placeholder is fully opaque */
+}
+
+.form-message-label{
+    color: white;
+    text-align: left;
+    
+}
+
+.form-message{
+    resize: none;
+}
+
+
+button {
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.6s ease; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #ff612b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-text, .form-container {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .left-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .left-text p {
+        font-size: 1rem;
+    }
+}
+
+/* Career */
+
+/* Projects */
+
+.message {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+    color: White;
+  }
+
+.project-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dots {
+   margin-left: 0.5rem /* Keep dots inline with text */
+}
+
+.dots span {
+    animation: blink-dots 1.5s infinite;
+  }
+  .dots span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .dots span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  @keyframes blink-dots {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+   .message{
+    font-size: 0.75rem;
+   }
 }
