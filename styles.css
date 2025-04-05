@@ -597,13 +597,20 @@ button:hover {
     overflow: hidden;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Adds depth and separates from background */
     margin: 1.5rem 0; /* Space around the section */
+    flex-direction: column;
 }
 
+/* .about-image-wrapper {
+    text-align: center;
+    margin-bottom: 1rem;
+} */
+
 .about-picture {
-    float: left;
-    margin-right: 20px;
+    display: flex;
+    margin: 0 auto 1rem auto; /* Center image */
+
     max-height: 200px;
-    max-width: 250px;
+    max-width: 550px;
     width: auto;
     height: auto;
     border-radius: 10px;
@@ -640,18 +647,20 @@ button:hover {
 
 @media (max-width: 768px) {
     .about-section {
-        width: 90%; /* Full width on smaller screens */
-    }
-
-    .about-picture {
-        max-width: 150px; /* Smaller image on mobile */
+        /* width: 90%; */
+        padding: 1.2rem;
+        margin: 1rem ;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     }
 
     .about-text {
-        font-size: 0.9rem; /* Slightly smaller text for narrow screens */
+        font-size: 0.95rem;
+        line-height: 1.7;
+        text-align: left; /* left-align reads better on mobile */
+        margin-bottom: 1rem;
     }
 }
-
 
 .tech-stack-wrapper{
     display: flex;
@@ -733,7 +742,7 @@ button:hover {
     margin: 16px 0; /* Space between career tiles */
     transition: transform 0.3s ease; /* Hover effect transition */
     /* max-width: 600px; Optional: Restrict the width */
-    width: 95%; /* Ensure it adapts to parent container */
+    /* width: 95%; Ensure it adapts to parent container */
     font-family: 'Poppins';
 }
 
@@ -786,13 +795,6 @@ button:hover {
 }
 
 @media (max-width: 768px) {
-    /* .about-section{
-        width: 300px
-    } */
-
-}
-
-@media (max-width: 768px) {
     .animation-container {
         width: 300px;
     }
@@ -801,17 +803,9 @@ button:hover {
         font-size: 1rem;
     }
 
-    .about-section {
-        width: 90%;
-    }
-
-    .about-picture{
-        width: 190px;
-        height: 140px;
-    }
-
     .tech-stack {
         width: 90%;
+        margin: 1rem;
     }
 
     .stack-icons {
@@ -822,8 +816,12 @@ button:hover {
         font-size: 1rem; /* Adjust as needed */
     }
     
-    .career-tile{
+    /* .career-tile{
         width: 95%
+    } */
+
+    .job-title{
+        font-size: 0.95rem;
     }
 }
 
