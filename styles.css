@@ -25,7 +25,7 @@ main{
 footer{
     margin: 0;
     padding: 1rem 2rem;
-    color: #E0E0E0;
+    color:white;
     font-size: .75rem;
 }
 
@@ -46,10 +46,11 @@ footer{
 
 .logo-text {
     margin: 0;
-    color: #E0E0E0;
+    color: white;
     font-size: 1.5rem;
     display: inline-flex;
     align-items: center;
+    font-family: 'Poppins';
     /* letter-spacing: 0.15rem; */
 }
 
@@ -83,8 +84,9 @@ footer{
 }
 
 .nav-list li a {
+    font-family: 'Poppins';
     text-decoration: none;
-    color: #E0E0E0;
+    color: white;
     font-weight: bold;
     letter-spacing: 0.12rem;
     position: relative; /* Positioning for the pseudo-element */
@@ -172,18 +174,20 @@ footer{
     justify-content: center; /* Vertically center the text inside the container */
     text-align: left; /* Left-align the text inside */
     color: #ff5c00;
-    width: 30%;
+    width: 295px;
+    
 }
 
 .intro-title {
     margin: 0; /* Remove default margin for consistent spacing */
     font-size: 2rem; /* Adjust as needed */
-    line-height: 1.2; /* Adjust spacing between lines */
+    line-height: 1.3; /* Adjust spacing between lines */
     color: white;
-    font-size: 2rem;
     font-family: 'Poppins';
     font-weight: 700;
-    text-shadow: 4px 4px 0px black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), /* Slight blur for depth */
+                 0px 0px 10px rgba(0, 0, 0, 0.5); /* Glow effect */
+    letter-spacing: 1.5px;
 }
 
 .typewriter {
@@ -191,18 +195,33 @@ footer{
     letter-spacing: 2px;
     font-size: 1.75rem;
     font-weight: 500;
+    line-height: 1.3;
     white-space: nowrap;
     overflow: hidden;
     text-align: left; /* Ensure typewriter text starts on the left */
     border-right: 4px solid white; /* Blinking cursor */
     animation: blink 0.7s step-end infinite;
-    height: 2.4rem; /* Prevent jumping during typing */
-    text-shadow: 4px 4px 0px black;
+    height: 2.6rem; /* Prevent jumping during typing */
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6), /* Subtle shadow */
+                 0px 0px 8px rgba(0, 0, 0, 0.4); /* Glow effect */
 }
 
 @keyframes blink {
     from, to { border-color: transparent; }
     50% { border-color: white; }
+}
+
+.intro-subtext{
+    margin: 0; /* Remove default margin for consistent spacing */
+    font-size: 1.4rem; /* Adjust as needed */
+    line-height: 1.5; /* Adjust spacing between lines */
+    color: #f2f0ef;
+    font-family: 'Poppins';
+    font-weight: 500;
+    letter-spacing: 1px; 
+    white-space: nowrap;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8), /* Fine, darker shadow */
+                 0px 0px 6px rgba(0, 0, 0, 0.3); /* Subtle glow for polish */
 }
 
 .headshot-container {
@@ -256,7 +275,7 @@ footer{
         gap: 2rem; /* Reduce space between containers */
         height: auto; /* Let the content determine height */
         padding: 2rem; /* Add padding around the content */
-        justify-content: center;
+        justify-content: normal;
     }
 
     .text-container {
@@ -275,12 +294,15 @@ footer{
     }
 
     .typewriter {
-        font-size: 1.8rem; /* Reduce typewriter font size */
+        font-size: 1.5rem; /* Reduce typewriter font size */
     }
 
     .headshot {
-        width: 200px; /* Adjust image size for smaller screens */
-        height: 280px;
+        width: 175px; /* Adjust image size for smaller screens */
+        height: 250px;
+    }
+    .intro-subtext{
+        font-size: 0.85rem;
     }
 }
 /* ------------------------------ Contact  ------------------------------*/
@@ -338,6 +360,7 @@ footer{
     font-weight: 700; /* Bold for impact */
     letter-spacing: 0.05rem; /* Add subtle spacing for a modern look */
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add depth with a shadow */
+    font-family: 'Poppins';
 }
 
 .left-text p {
@@ -347,6 +370,7 @@ footer{
     letter-spacing: 0.03rem; /* Slight spacing */
     margin-top: 0.5rem; /* Add a bit of space above */
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Subtle shadow for paragraph */
+    font-family: 'Poppins';
 }
 
 .rocket-icon {
@@ -372,6 +396,7 @@ footer{
 .form-container {
     flex: 1; /* Take available space */
     max-width: 50%; /* Limit width */
+    font-family: 'Poppins';
 }
 
 .form-header{
@@ -516,9 +541,304 @@ button:hover {
     }
 }
 
-/* Career */
+/* -------------------------------------------------- About --------------------------------------------------*/
 
-/* Projects */
+.animation-wrapper{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+   
+}
+
+.animation-container {
+    /* position: relative; */
+    margin-top: -3rem;
+    display: flex;
+    justify-content: center;
+    width: 600px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.character {
+    display: block;
+    width: 600px; /* Match canvas width */
+    height: 150px; /* Match canvas height */
+    /* background: #7ec0ff; Optional background color */
+}
+
+.animation-subtext{
+    font-size: 1.4rem; /* Adjust as needed */
+    line-height: 1.5; /* Adjust spacing between lines */
+    color: white;
+    font-family: 'Poppins';
+    font-weight: 500;
+/* 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 
+                 0px 0px 10px rgba(0, 0, 0, 0.5); 
+                  */
+    letter-spacing: 1.5px;
+}
+
+.about-wrapper{
+    display: flex;
+    justify-content: center;
+    animation: fadeInAbout 1.5s ease-in-out
+}
+
+.about-section {
+    width: 750px;
+    background: #1e1e1e; /* Softer gradient for better blending */
+    padding: 1rem; /* Slightly more padding for breathing space */
+    border-radius: 12px; /* Slightly more rounded corners for a softer look */
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Adds depth and separates from background */
+    margin: 1.5rem 0; /* Space around the section */
+}
+
+.about-picture {
+    float: left;
+    margin-right: 20px;
+    max-height: 200px;
+    max-width: 250px;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid #777; /* Softer border that blends with the background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Subtle shadow for depth */
+}
+
+.about-text {
+    font-family: 'Open Sans', sans-serif;
+    color: #f0f0f0; /* Light color for good contrast against the dark background */
+    line-height: 1.8; /* Increased line height for readability */
+    font-size: 1rem; /* Comfortable reading size */
+    text-align: justify; /* Neat alignment for paragraphs */
+}
+
+.about-section h2 {
+    font-size: 1.8rem; /* Larger size for headers */
+    color: #fff; /* Pure white for strong emphasis */
+    margin-bottom: 0.8rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Adds subtle emphasis */
+    font-weight: 600;
+}
+
+.about-section a {
+    color: #4db8ff; /* Accent color for links */
+    text-decoration: none; /* Removes underline */
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.about-section a:hover {
+    color: #73caff; /* Brighter shade on hover */
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        width: 90%; /* Full width on smaller screens */
+    }
+
+    .about-picture {
+        max-width: 150px; /* Smaller image on mobile */
+    }
+
+    .about-text {
+        font-size: 0.9rem; /* Slightly smaller text for narrow screens */
+    }
+}
+
+
+.tech-stack-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.tech-stack {
+    color: #fff;
+    display: flex;
+    flex-direction: column; /* Stack heading, divider, and icons vertically */
+    justify-content: center;
+    /* align-items: center; Center align child elements */
+    width: 750px; 
+   
+}
+
+/* Section Heading */
+.tech-stack-header {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #f5f5f5;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    text-align: left;
+}
+
+.divider{
+    border : 1px solid #ff612b;
+    margin-bottom : 5px;
+}
+
+.stack-icons {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 4 items per row */
+    gap: 1rem; /* Space between the items */
+    justify-items: center; /* Center the items in the grid */
+    padding: 1rem 0rem; /* Optional: Padding around the grid */
+}
+
+.stack-icon {
+    display: flex;
+    flex-direction: column; /* Stack the icon and text vertically */
+    align-items: center; /* Center align the icon and text */
+    text-align: center; /* Center the text below the icon */
+}
+
+.stack-icon img {
+    width: 60px; /* Icon size */
+    height: 60px;
+    border-radius: 4px; /* Rounded square */
+    background-color: #8f939a; /* Gray background */
+    padding: 8px;
+    object-fit: contain;
+    margin-bottom: 8px; /* Space between icon and text */
+    transition: transform 0.2s ease, filter 0.2s ease; /* Smooth hover effects */
+}
+
+.stack-icon img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    filter: brightness(1.2); /* Brighten on hover */
+}
+
+.stack-icon p {
+    font-size: 14px; /* Adjust text size */
+    color: white; /* Text color */
+    margin: 0; /* Remove default margins */
+    font-family: Arial, sans-serif; /* Font style */
+}
+
+
+.career-tile {
+    display: flex; /* Align items horizontally */
+    align-items: center; /* Center vertically */
+    background-color: #1e1e1e; /* Dark background */
+    color: #fff; /* Text color */
+    padding: 16px; /* Spacing inside the container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    margin: 16px 0; /* Space between career tiles */
+    transition: transform 0.3s ease; /* Hover effect transition */
+    /* max-width: 600px; Optional: Restrict the width */
+    width: 95%; /* Ensure it adapts to parent container */
+    font-family: 'Poppins';
+}
+
+.career-tile:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+.career-logo {
+    width: 80px; /* Logo width */
+    height: 80px; /* Logo height */
+    border-radius: 8px; /* Makes it circular */
+    object-fit: cover; /* Ensure the image fills the space */
+    margin-right: 16px; /* Space between logo and details */
+}
+
+.career-details {
+    flex: 1; /* Take up the remaining horizontal space */
+}
+
+.job-title {
+    font-size: 1.2rem; /* Adjust text size */
+    margin: 0; /* Remove default margins */
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.job-duration {
+    font-size: 14px; /* Adjust text size */
+    margin: 4px 0 0; /* Space above */
+    color: #a5a5a5; /* Slightly dimmed color for duration */
+}
+
+.job-description {
+    margin-top: 8px;
+    padding-left: 20px; /* Indent for the bullets */
+    list-style-type: disc; /* Default bullet style */
+}
+
+.job-description li {
+    margin-bottom: 6px; /* Spacing between bullet points */
+    font-size: 14px;
+    color: #dcdcdc; /* Slightly lighter than the body text */
+}
+
+@media (max-width: 768px) {
+    .stack-icons {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+    }
+
+}
+
+@media (max-width: 768px) {
+    /* .about-section{
+        width: 300px
+    } */
+
+}
+
+@media (max-width: 768px) {
+    .animation-container {
+        width: 300px;
+    }
+
+    .animation-subtext {
+        font-size: 1rem;
+    }
+
+    .about-section {
+        width: 90%;
+    }
+
+    .about-picture{
+        width: 190px;
+        height: 140px;
+    }
+
+    .tech-stack {
+        width: 90%;
+    }
+
+    .stack-icons {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .animation-subtext{
+        font-size: 1rem; /* Adjust as needed */
+    }
+    
+    .career-tile{
+        width: 95%
+    }
+}
+
+@keyframes fadeInAbout {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* -------------------------------------------------- Projects -------------------------------------------------- */
 
 .message {
     display: flex;
